@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Score</h1>
+        <p id="score-message">{{ result_message }}</p>
+        <button onclick="window.location.href='/'">Try Again</button>
+    </div>
+</body>
+</html>

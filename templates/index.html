@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KBC Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the KBC Game</h1>
+        <button onclick="window.location.href='/generate_qr'">Generate QR Code</button>
+        <br>
+        {% if qr_code %}
+            <h2>Scan this QR Code to Register:</h2>
+            <div class="qr-code-container">
+                <img src="{{ qr_code }}" alt="QR Code for registration">
+            </div>
+        {% endif %}
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

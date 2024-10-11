@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css"> <!-- Link to your CSS file -->
+    <title>KBC Game - Questions</title>
+</head>
+<body>
+    <div class="container">
+        <h1>KBC Questions</h1>
+        <form action="{{ url_for('show_questions') }}" method="post">
+        {% for i in range %}
+            <div>
+                <label>{{ questions[i].question }}</label><br>
+                {% for option in questions[i].options %}
+                    <input type="radio" name="question{{ i }}" value="{{ option }}">
+                    {{ option }}<br>
+                {% endfor %}
+            </div>
+            <br>
+        {% endfor %}
+        </div>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+
+    <script src="static/js/script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
